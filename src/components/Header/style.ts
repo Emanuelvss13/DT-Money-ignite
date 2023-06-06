@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const HeaderContainer = styled.header`
   width: 100%;
   padding: 2.5rem 0 7.5rem;
+  background-color: ${(props) => props.theme["gray-900"]};
 `;
 
 export const HeaderContent = styled.div`
