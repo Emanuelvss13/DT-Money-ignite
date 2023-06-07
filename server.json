@@ -1,11 +1,31 @@
 {
   "transactions": [
     {
-    "description": "Desenvolvimento de site",
-    "type": "income",
-    "category": "Serviço",
-    "price": 14000,
-    "createdAt": "2023-06-07T13:33:24.291Z"
-  }
-]
+      "description": "Desenvolvimento de site",
+      "type": "income",
+      "category": "Serviço",
+      "price": 14000,
+      "createdAt": "2023-06-07T13:33:24.291Z"
+    },
+    {
+      "description": "Sálario",
+      "type": "income",
+      "category": "Serviço",
+      "price": 5000,
+      "createdAt": "2023-06-07T13:33:24.291Z"
+    },
+    {
+      "description": "Freelance",
+      "type": "income",
+      "category": "Serviço",
+      "price": 500,
+      "createdAt": "2023-06-07T13:33:24.291Z"
+    },{
+      "description": "Compras do mês",
+      "type": "outcome",
+      "category": "Despesas de casa",
+      "price": 650,
+      "createdAt": "2023-06-07T13:33:24.291Z"
+    }
+  ]
 }
