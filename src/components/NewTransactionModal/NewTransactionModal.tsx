@@ -1,8 +1,29 @@
 import * as Dialog from '@radix-ui/react-dialog';
 import { CloseButton, Content, Overlay, TransactionStatusContainer, TransactionTypeButton } from './style';
-import { ArrowCircleDown, ArrowCircleUp, ArrowFatUp, X } from 'phosphor-react';
+import { ArrowCircleDown, ArrowCircleUp, X } from 'phosphor-react';
+import * as z from 'zod'
+import { useForm } from 'react-hook-form';
+import { zodResolver } from '@hookform/resolvers/zod';
+
+const newTransactionSchema = z.object({
+  description: z.string(),
+  price: z.number(),
+  category: z.string(),
+  // type: z.enum(['income', 'outcome'])
+})
+
+type newTransactionType = z.infer<typeof newTransactionSchema>
 
 export function NewTransactionModal() {
+
+  const {register, handleSubmit} = useForm<newTransactionType>({
+    resolver: zodResolver(newTransactionSchema)
+  })
+
+  function handleCreateNewTransaction(data: newTransactionType ){
+    console.log(data);
+  }
+
   return (
     <Dialog.Portal>
       <Overlay>
@@ -13,10 +34,28 @@ export function NewTransactionModal() {
 
           <Dialog.Title>Nova Transação</Dialog.Title>
 
-          <form action="">
-            <input type="text" placeholder='Descrição' required/>
-            <input type="text" placeholder='Preço' required/>
-            <input type="text" placeholder='Categoria' required/>
+          <form onSubmit={handleSubmit(handleCreateNewTransaction)}>
+            <input 
+              type="text" 
+              placeholder='Descrição' 
+              required
+              {...register('description')}
+              />
+
+            <input 
+              type="text" 
+              placeholder='Preço' 
+              required
+              {...register('price', { valueAsNumber: true })}
+              />
+
+            <input 
+              type="text" 
+              placeholder='Categoria' 
+              required
+              {...register('category')}
+              />
+
 
             <TransactionStatusContainer>
               <TransactionTypeButton type='button' variant="income" value="income">
