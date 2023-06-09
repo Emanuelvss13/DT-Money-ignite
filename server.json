@@ -1,6 +1,7 @@
 {
   "transactions": [
     {
+      "id": 1,
       "description": "Desenvolvimento de site",
       "type": "income",
       "category": "Serviço",
@@ -8,6 +9,7 @@
       "createdAt": "2023-06-07T13:33:24.291Z"
     },
     {
+      "id": 2,
       "description": "Sálario",
       "type": "income",
       "category": "Serviço",
@@ -15,17 +17,28 @@
       "createdAt": "2023-06-07T13:33:24.291Z"
     },
     {
+      "id": 3,
       "description": "Freelance",
       "type": "income",
       "category": "Serviço",
       "price": 500,
       "createdAt": "2023-06-07T13:33:24.291Z"
-    },{
+    },
+    {
+      "id": 4,
       "description": "Compras do mês",
       "type": "outcome",
       "category": "Despesas de casa",
       "price": 650,
       "createdAt": "2023-06-07T13:33:24.291Z"
+    },
+    {
+      "category": "Vestuário",
+      "description": "Tênis",
+      "price": 300,
+      "type": "outcome",
+      "createdAt": "2023-06-09T13:57:15.606Z",
+      "id": 5
     }
   ]
 }
